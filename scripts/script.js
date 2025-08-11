@@ -17,16 +17,16 @@ document.addEventListener('DOMContentLoaded', function() {
             { data: { id: 'deployment', label: 'Ease of deploying changes to production', color: '#90ee90' } },
             { data: { id: 'codequality', label: 'Code Quality', color: '#90ee90' } },
             { data: { id: 'usability', label: 'Usability or Usefulness Support for Tools or Techniques or APIs', color: '#90ee90' } },
-            
+
             // Arestas
-            { data: { source: 'deployment', target: 'deadline', label: 'Reduz' } },
-            { data: { source: 'deployment', target: 'pressure', label: 'Reduz' } },
-            { data: { source: 'codequality', target: 'oversight', label: 'Reduz' } },
-            { data: { source: 'codequality', target: 'postponement', label: 'Reduz' } },
-            { data: { source: 'codequality', target: 'lackdesignprinciples', label: 'Reduz' } },
-            { data: { source: 'codequality', target: 'lackrefactoring', label: 'Reduz' } },
-            { data: { source: 'usability', target: 'lacktechnology', label: 'Mitiga'  } },
-            { data: { source: 'usability', target: 'lackexperience', label: 'Mitiga'  } }
+            { data: { source: 'deployment', target: 'deadline', label: 'Reduce' } },
+            { data: { source: 'deployment', target: 'pressure', label: 'Reduce' } },
+            { data: { source: 'codequality', target: 'oversight', label: 'Reduce' } },
+            { data: { source: 'codequality', target: 'postponement', label: 'Reduce' } },
+            { data: { source: 'codequality', target: 'lackdesignprinciples', label: 'Reduce' } },
+            { data: { source: 'codequality', target: 'lackrefactoring', label: 'Reduce' } },
+            { data: { source: 'usability', target: 'lacktechnology', label: 'Mitigates'  } },
+            { data: { source: 'usability', target: 'lackexperience', label: 'Mitigates'  } }
         ],
         style: [
             {
