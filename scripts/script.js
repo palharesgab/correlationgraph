@@ -1,11 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    // We no longer need the 'nodeDocs' object here!
-
     const cy = cytoscape({
         container: document.getElementById('cy'),
         elements: [
-            // Nodes (td)
+            // Nos (td)
             { data: { id: 'pressure', label: 'Schedule pressure', color: '#555555' } },
             { data: { id: 'deadline', label: 'Deadline', color: '#555555' } },
             { data: { id: 'lacktechnology', label: 'Lack of knowledge about technology', color: '#555555' } },
@@ -15,25 +13,27 @@ document.addEventListener('DOMContentLoaded', function() {
             { data: { id: 'oversight', label: 'Programmer Oversight', color: '#555555' } },
             { data: { id: 'postponement', label: 'Postponement of problem resolution', color: '#555555' } },
 
-            // Nodes (dx)
+            // Nos (dx)
             { data: { id: 'deployment', label: 'Ease of deploying changes to production', color: '#90ee90' } },
             { data: { id: 'codequality', label: 'Code Quality', color: '#90ee90' } },
             { data: { id: 'usability', label: 'Usability or Usefulness Support for Tools or Techniques or APIs', color: '#90ee90' } },
-            // Edges
-            { data: { source: 'deadline', target: 'deployment' } },
-            { data: { source: 'pressure', target: 'deployment' } },
-            { data: { source: 'oversight', target: 'codequality' } },
-            { data: { source: 'postponement', target: 'codequality' } },
-            { data: { source: 'lackdesignprinciples', target: 'codequality' } },
-            { data: { source: 'lackrefactoring', target: 'codequality' } },
-            { data: { source: 'lacktechnology', target: 'usability' } },
-            { data: { source: 'lackexperience', target: 'usability' } }
+            
+            // Arestas
+            { data: { source: 'deployment', target: 'deadline', label: 'Reduz' } },
+            { data: { source: 'deployment', target: 'pressure', label: 'Reduz' } },
+            { data: { source: 'codequality', target: 'oversight', label: 'Reduz' } },
+            { data: { source: 'codequality', target: 'postponement', label: 'Reduz' } },
+            { data: { source: 'codequality', target: 'lackdesignprinciples', label: 'Reduz' } },
+            { data: { source: 'codequality', target: 'lackrefactoring', label: 'Reduz' } },
+            { data: { source: 'usability', target: 'lacktechnology', label: 'Mitiga'  } },
+            { data: { source: 'usability', target: 'lackexperience', label: 'Mitiga'  } }
         ],
         style: [
-            // ... your style rules remain the same
             {
                 selector: 'node',
                 style: {
+                    'width': '72px',  
+                    'height': '72px',
                     'label': 'data(label)',
                     'text-wrap': 'wrap',
                     'text-max-width': '100px',
@@ -56,11 +56,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     'line-color': '#ccc',
                     'target-arrow-shape': 'triangle',
                     'target-arrow-color': '#ccc',
-                    'curve-style': 'bezier'
+                    'curve-style': 'bezier',
+                    'label': 'data(label)', // Exibe o label das arestas
+                    'font-size': '10px',
+                    'text-background-color': '#fff', // Adiciona um fundo branco para melhor leitura
+                    'text-background-opacity': 0.7,
+                    'text-background-padding': '3px'
                 }
             }
         ],
-        minZoom: 0.5,
+        minZoom: 0.75,
         maxZoom: 2,
         layout: {
             name: 'cose',
