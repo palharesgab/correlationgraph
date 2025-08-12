@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
             { data: { source: 'codequality', target: 'lackdesignprinciples', label: 'Reduce' } },
             { data: { source: 'codequality', target: 'lackrefactoring', label: 'Reduce' } },
             { data: { source: 'usability', target: 'lacktechnology', label: 'Mitigates'  } },
-            { data: { source: 'usability', target: 'lackexperience', label: 'Reduce'  } }
+            { data: { source: 'usability', target: 'lackexperience', label: 'Mitigates'  } }
         ],
         style: [
             {
