@@ -21,12 +21,12 @@ document.addEventListener('DOMContentLoaded', function() {
             // Arestas
             { data: { source: 'deployment', target: 'deadline', label: 'Reduce' } },
             { data: { source: 'deployment', target: 'pressure', label: 'Reduce' } },
-            { data: { source: 'codequality', target: 'oversight', label: 'Reduce' } },
+            { data: { source: 'codequality', target: 'oversight', label: 'Mitigates' } },
             { data: { source: 'codequality', target: 'postponement', label: 'Reduce' } },
             { data: { source: 'codequality', target: 'lackdesignprinciples', label: 'Reduce' } },
             { data: { source: 'codequality', target: 'lackrefactoring', label: 'Reduce' } },
             { data: { source: 'usability', target: 'lacktechnology', label: 'Mitigates'  } },
-            { data: { source: 'usability', target: 'lackexperience', label: 'Mitigates'  } }
+            { data: { source: 'usability', target: 'lackexperience', label: 'Reduce'  } }
         ],
         style: [
             {
